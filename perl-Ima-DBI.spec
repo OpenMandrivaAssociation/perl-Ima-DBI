@@ -18,7 +18,6 @@ Buildrequires:	perl-DBIx-ContextualFetch
 Buildrequires:	perl-Class-Data-Inheritable
 Buildrequires:  perl-DBI
 Buildarch:	noarch
-BuildRoot:	%{_tmppath}/%{name}-%{version}
 
 %description
 Ima::DBI attempts to organize and facilitate caching and more efficient use of
