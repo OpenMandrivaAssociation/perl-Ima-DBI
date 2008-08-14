@@ -1,7 +1,7 @@
 %define module	Ima-DBI
 %define name	perl-%{module}
-%define version 0.34
-%define release %mkrel 7
+%define version 0.35
+%define release %mkrel 1
 
 Name:		%{name}
 Version:	%{version}
@@ -9,11 +9,8 @@ Release:	%{release}
 Summary:	Database connection caching and organization
 License:	GPL or Artistic
 Group:		Development/Perl
-Source:		http://search.cpan.org/CPAN/authors/id/T/TM/TMTM/%{module}-%{version}.tar.bz2
 Url:		http://search.cpan.org/dist/%{module}
-%if %{mdkversion} < 1010
-Buildrequires:	perl-devel
-%endif
+Source:		http://search.cpan.org/CPAN/authors/id/T/TM/TMTM/%{module}-%{version}.tar.gz
 Buildrequires:	perl-DBIx-ContextualFetch
 Buildrequires:	perl-Class-Data-Inheritable
 Buildrequires:  perl-DBI
