@@ -1,21 +1,19 @@
 %define module	Ima-DBI
-%define name	perl-%{module}
-%define version 0.35
-%define release %mkrel 2
 
-Name:		%{name}
-Version:	%{version}
-Release:	%{release}
+Name:		perl-%{module}
+Version:	0.35
+Release:	3
 Summary:	Database connection caching and organization
 License:	GPL or Artistic
 Group:		Development/Perl
 Url:		http://search.cpan.org/dist/%{module}
 Source:		http://search.cpan.org/CPAN/authors/id/T/TM/TMTM/%{module}-%{version}.tar.gz
-Buildrequires:	perl-DBIx-ContextualFetch
-Buildrequires:	perl-Class-Data-Inheritable
-Buildrequires:  perl-DBI
-Buildarch:	noarch
-BuildRoot:	%{_tmppath}/%{name}-%{version}
+
+BuildRequires:	perl-devel
+BuildRequires:	perl(DBIx::ContextualFetch)
+BuildRequires:	perl(Class::Data::Inheritable)
+BuildRequires:	perl(DBI)
+BuildArch:	noarch
 
 %description
 Ima::DBI attempts to organize and facilitate caching and more efficient use of
@@ -27,22 +25,51 @@ around just one object without worrying about a trail of DBI handles behind it.
 %setup -q -n %{module}-%{version}
 
 %build
-%{__perl} Makefile.PL INSTALLDIRS=vendor
+perl Makefile.PL INSTALLDIRS=vendor
 %make
 
 %check
-%{__make} test
+make test
 
 %install
-rm -rf %{buildroot}
 %makeinstall_std
 
-%clean 
-rm -rf %{buildroot}
-
 %files 
-%defattr(-,root,root)
 %doc Changes README
 %{perl_vendorlib}/Ima
 %{_mandir}/*/*
+
+%changelog
+* Fri Sep 04 2009 Thierry Vignaud <tv@mandriva.org> 0.35-2mdv2010.0
++ Revision: 430468
+- rebuild
+
+* Thu Aug 14 2008 Guillaume Rousse <guillomovitch@mandriva.org> 0.35-1mdv2009.0
++ Revision: 271775
+- new version
+
+* Wed Jul 23 2008 Thierry Vignaud <tv@mandriva.org> 0.34-7mdv2009.0
++ Revision: 241484
+- rebuild
+- kill re-definition of %%buildroot on Pixel's request
+
+  + Olivier Blin <oblin@mandriva.com>
+    - restore BuildRoot
+
+* Sat Sep 15 2007 Guillaume Rousse <guillomovitch@mandriva.org> 0.34-5mdv2008.0
++ Revision: 86474
+- rebuild
+
+
+* Thu Aug 31 2006 Guillaume Rousse <guillomovitch@mandriva.org> 0.34-4mdv2007.0
+- Rebuild
+
+* Wed Dec 28 2005 Nicolas Lécureuil <neoclust@mandriva.org> 0.34-3mdk
+- Add BuildRequires
+
+* Wed Dec 28 2005 Guillaume Rousse <guillomovitch@mandriva.org> 0.34-2mdk
+- fix buildrequires
+
+* Mon Dec 05 2005 Guillaume Rousse <guillomovitch@mandriva.org> 0.34-1mdk
+- first mdk release
 
