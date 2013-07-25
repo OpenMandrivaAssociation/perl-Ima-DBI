@@ -1,13 +1,13 @@
 %define module	Ima-DBI
 
 Name:		perl-%{module}
-Version:	0.35
-Release:	3
+Version:	%perl_convert_version 0.34
+Release:	1
 Summary:	Database connection caching and organization
 License:	GPL or Artistic
 Group:		Development/Perl
 Url:		http://search.cpan.org/dist/%{module}
-Source:		http://search.cpan.org/CPAN/authors/id/T/TM/TMTM/%{module}-%{version}.tar.gz
+Source:		http://www.cpan.org/authors/id/T/TM/TMTM/Ima-DBI-0.34.tar.gz
 
 BuildRequires:	perl-devel
 BuildRequires:	perl(DBIx::ContextualFetch)
@@ -72,4 +72,5 @@ make test
 
 * Mon Dec 05 2005 Guillaume Rousse <guillomovitch@mandriva.org> 0.34-1mdk
 - first mdk release
+
 
