@@ -3,7 +3,7 @@
 
 Name:		perl-%{module}
 Version:	%perl_convert_version %{upstream_version}
-Release:	5
+Release:	6
 Summary:	Database connection caching and organization
 License:	GPL or Artistic
 Group:		Development/Perl
