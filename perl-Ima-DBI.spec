@@ -7,7 +7,7 @@ Release:	6
 Summary:	Database connection caching and organization
 License:	GPL or Artistic
 Group:		Development/Perl
-Url:		http://search.cpan.org/dist/%{module}
+Url:		https://search.cpan.org/dist/%{module}
 Source:		http://search.cpan.org/CPAN/authors/id/T/TM/TMTM/%{module}-%{upstream_version}.tar.gz
 
 BuildRequires:	perl-devel
