@@ -2,13 +2,13 @@
 %define upstream_version 0.35
 
 Name:		perl-%{module}
-Version:	%perl_convert_version %{upstream_version}
-Release:	6
+Version:	%{upstream_version}
+Release:	7
 Summary:	Database connection caching and organization
 License:	GPL or Artistic
 Group:		Development/Perl
-Url:		https://search.cpan.org/dist/%{module}
-Source:		http://search.cpan.org/CPAN/authors/id/T/TM/TMTM/%{module}-%{upstream_version}.tar.gz
+Url:		https://metacpan.org/dist/Ima-DBI
+Source:		https://cpan.metacpan.org/authors/id/P/PE/PERRIN/Ima-DBI-%{upstream_version}.tar.gz
 
 BuildRequires:	make
 BuildRequires:	perl-devel
