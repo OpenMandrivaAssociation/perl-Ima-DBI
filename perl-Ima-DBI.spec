@@ -1,14 +1,12 @@
 %define module	Ima-DBI
-%define upstream_version 0.35
-
 Name:		perl-%{module}
-Version:	%{upstream_version}
-Release:	7
+Version:	0.35
+Release:	8
 Summary:	Database connection caching and organization
 License:	GPL or Artistic
 Group:		Development/Perl
 Url:		https://metacpan.org/dist/Ima-DBI
-Source:		https://cpan.metacpan.org/authors/id/P/PE/PERRIN/Ima-DBI-%{upstream_version}.tar.gz
+Source:		https://cpan.metacpan.org/authors/id/P/PE/PERRIN/Ima-DBI-%{version}.tar.gz
 
 BuildRequires:	make
 BuildRequires:	perl-devel
@@ -24,7 +22,7 @@ with your class (instead of as separate objects). This allows you to pass
 around just one object without worrying about a trail of DBI handles behind it.
 
 %prep
-%setup -q -n %{module}-%{upstream_version}
+%setup -q -n %{module}-%{version}
 
 %build
 perl Makefile.PL INSTALLDIRS=vendor
